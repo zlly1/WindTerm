@@ -20,7 +20,7 @@ unsigned char samplefile[FILESIZE];
 volatile int stop=0;
 
 const char* hosts[]={"localhost","barebone"};
-void signal_stop(){
+void signal_stop(void){
   stop=1;
   printf("Stopping...\n");
 }
@@ -44,7 +44,7 @@ int docycle(const char *host, int test){
   return ret;
 }
 
-int thread(){
+int thread(void){
   while(docycle(hosts[rand()%2],TEST_WRITE) == SSH_OK)
     if(stop)
       break;

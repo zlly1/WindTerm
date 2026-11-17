@@ -1,0 +1,9 @@
+# 构建产物
+fixes/libssh-modern/build/
+build/
+*.o
+*.dylib
+compile_commands.json
+
+# macOS
+.DS_Store
